@@ -78,6 +78,16 @@ function appendTaskDOM(tarea) {
   item.appendChild(buttonDelete);
   lista.appendChild(item);
 
+
+  checkbox.addEventListener('click',(event)=>{
+    const id = checkbox.getAttribute('id');
+    console.log(id);
+  })
+
+  buttonDelete.addEventListener("click", (event) => {
+    const id = buttonDelete.getAttribute("id");
+    console.log(id);
+});
 }
 
 // Inicialización de la lista del DOM, a partir de las tareas existentes.
@@ -106,9 +116,3 @@ formulario.addEventListener('submit', (event) => {
   formulario.elements[1].value = '';
 })
 
-const li = document.querySelectorAll('.task-list__item');
-
-for (let i = 0; i < li.length; i++) {
-  const checkbox = document.getElementById(`tarea-${tarea.id}`)
-  console.log(checkbox);
-}
